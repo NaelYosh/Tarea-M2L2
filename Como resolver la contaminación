@@ -1,0 +1,20 @@
+import discord
+import random
+
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.command()
+async def videos(ctx):
+    consejos = [
+        "https://www.youtube.com/watch?v=m5CtZjIYWU8",
+        "https://www.youtube.com/watch?v=D_u6mNlHprE",
+        "https://www.youtube.com/watch?v=Cx2vm31y0IA"
+    ]
+    consejo = random.choice(consejos)
+    await ctx.send(consejo)
